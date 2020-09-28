@@ -33,7 +33,7 @@ const actions = {
 	//  生成路由权限，从服务端动态拉取
 	generateRoutes({commit}: { commit: Function }) {
 		//	服务端数据
-		const map = aaaaa
+		const map = aaaaa;
 		return new Promise(resolve => {
 			setTimeout(() => {
 				resolve(map);

@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueRouter, {RouteConfig} from 'vue-router'
 import store from '../store';
 import {syncRoutesList, syncRoutesListLength} from "@/router/modules/syncRoutes"
-import {asyncRoutesList} from "@/router/modules/asyncRoutes"
 
 Vue.use(VueRouter);
 const createRouter = (routesList: RouteConfig[]) => new VueRouter({
