@@ -8,6 +8,7 @@ import {getRoutes} from "@/api/role"
 import {RouteConfig} from "vue-router"
 import {setRouteListByMap} from "@/utils/routerBasicMap"
 import {asyncRoutesList} from "@/router/modules/asyncRoutes"
+import {aaaaa} from '@/store/modules/a.ts';
 
 interface STATE {
 	routeListLength: number;
@@ -32,22 +33,7 @@ const actions = {
 	//  生成路由权限，从服务端动态拉取
 	generateRoutes({commit}: { commit: Function }) {
 		//	服务端数据
-		const map = {
-			// 用户列表
-			'user': true,
-			// 处方审核列表
-			'prescription': true,
-			// 配置单
-			'configuration': true,
-			// 收计费
-			'charge': true,
-			// 系统设置
-			'system': true,
-			// 修改密码
-			'changePassword': true,
-			// 消息列表
-			'message': true,
-		};
+		const map = aaaaa
 		return new Promise(resolve => {
 			setTimeout(() => {
 				resolve(map);
