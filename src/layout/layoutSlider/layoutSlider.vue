@@ -46,7 +46,7 @@
     import { log } from '@/utils/common';
 
     export default {
-        name: 'LayoutSlider',
+        name: 'layoutSlider',
         computed: {
             ...mapGetters([
                 'routeList',
