@@ -7,7 +7,7 @@
 <script lang="ts">
 	import {Vue, Component} from 'vue-property-decorator';
 	import LayoutMain from '@/layout/layoutMain/layoutMain.vue';
-	import LayoutSlider from '@/layout/layoutSider/layoutSlider.vue';
+	import LayoutSlider from '@/layout/layoutSlider/layoutSlider.vue';
 
 
 	@Component({
