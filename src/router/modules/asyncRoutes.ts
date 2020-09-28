@@ -1,5 +1,5 @@
 import LayoutStair from '@/layout/layoutStair/layoutStair.vue';
-
+import User from '@/views/user/user.vue';
 //	异步路由
 export const asyncRoutesList = [
 	{
@@ -7,9 +7,21 @@ export const asyncRoutesList = [
 			chName: '用户列表',
 			selectRouteKey: 'user',
 		},
-		path: '/user',
 		name: 'user',
-		component: () => import(/* webpackChunkName: "user" */ '@/views/user/user.vue'),
+		path: '/user',
+		component: User,
+		children: [
+			{
+				meta: {
+					chName: '病人信息',
+					selectRouteKey: 'patientInfo',
+					openRouteKey: 'user'
+				},
+				name: 'patientInfo',
+				path: '/user/patientInfo',
+				component: () => import(/* webpackChunkName: "prescription" */ '@/views/user/patientInfo.vue'),
+			}
+		]
 	},
 	{
 		meta: {
@@ -65,8 +77,8 @@ export const asyncRoutesList = [
 			chName: '消息列表',
 			selectRouteKey: 'message',
 		},
-		path: '/message',
 		name: 'message',
+		path: '/message',
 		component: () => import(/* webpackChunkName: "message" */ '@/views/message/message.vue'),
 	}
 ];
