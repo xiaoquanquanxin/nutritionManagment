@@ -1,10 +1,9 @@
 <template>
-    <p>配置单</p>
+    <p>配置单详情</p>
 </template>
 <script>
     export default {
-        name: 'configuration',
-        
+        name: 'configurationDetail',
     };
 </script>
 <style scoped lang="stylus">

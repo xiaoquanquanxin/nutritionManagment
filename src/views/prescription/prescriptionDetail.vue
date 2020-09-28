@@ -1,10 +1,9 @@
 <template>
-    <p>配置单</p>
+    <p>处方详情</p>
 </template>
 <script>
     export default {
-        name: 'configuration',
-        
+        name: 'prescriptionDetail',
     };
 </script>
 <style scoped lang="stylus">

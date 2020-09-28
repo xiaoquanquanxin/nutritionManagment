@@ -10,19 +10,34 @@ export const asyncRoutesList = [
 		name: 'user',
 		path: '/user',
 		component: User,
+		//	虽然有子项，但作为一个项存在，而不是一个菜单
+		isMenuItem: true,
 		children: [
 			{
 				meta: {
 					chName: '病人信息',
-					selectRouteKey: 'patientInfo',
-					openRouteKey: 'user'
+					selectRouteKey: 'user',
+					//	openRouteKey: 'user'
 				},
 				name: 'patientInfo',
 				path: '/user/patientInfo',
 				component: () => import(/* webpackChunkName: "prescription" */ '@/views/user/patientInfo.vue'),
-			}
+				hidden: true,
+			},
+			{
+				meta: {
+					chName: '筛查',
+					selectRouteKey: 'user',
+					//	openRouteKey: 'user'
+				},
+				name: 'screening',
+				path: '/user/screening',
+				component: () => import(/* webpackChunkName: "prescription" */ '@/views/user/screening.vue'),
+				hidden: true,
+			},
 		]
 	},
+
 	{
 		meta: {
 			chName: '处方审核列表',
@@ -31,6 +46,15 @@ export const asyncRoutesList = [
 		path: '/prescription',
 		name: 'prescription',
 		component: () => import(/* webpackChunkName: "prescription" */ '@/views/prescription/prescription.vue'),
+	},
+	{
+		meta: {
+			chName: '处方详情',
+			selectRouteKey: 'prescriptionDetail',
+		},
+		path: '/prescription/prescriptionDetail',
+		name: 'prescriptionDetail',
+		component: () => import(/* webpackChunkName: "prescription" */ '@/views/prescription/prescriptionDetail.vue'),
 	},
 	{
 		meta: {
@@ -43,12 +67,39 @@ export const asyncRoutesList = [
 	},
 	{
 		meta: {
+			chName: '配置详情',
+			selectRouteKey: 'configurationDetail',
+		},
+		path: '/configuration/configurationDetail',
+		name: 'configurationDetail',
+		component: () => import(/* webpackChunkName: "configuration" */ '@/views/configuration/configurationDetail.vue'),
+	},
+	{
+		meta: {
 			chName: '收计费',
 			selectRouteKey: 'charge',
 		},
 		path: '/charge',
 		name: 'charge',
 		component: () => import(/* webpackChunkName: "charge" */ '@/views/charge/charge.vue'),
+	},
+	{
+		meta: {
+			chName: '缴费',
+			selectRouteKey: 'charge',
+		},
+		path: '/charge/pay',
+		name: 'pay',
+		component: () => import(/* webpackChunkName: "charge" */ '@/views/charge/pay.vue'),
+	},
+	{
+		meta: {
+			chName: '计费',
+			selectRouteKey: 'charge',
+		},
+		path: '/charge/billing',
+		name: 'billing',
+		component: () => import(/* webpackChunkName: "charge" */ '@/views/charge/billing.vue'),
 	},
 
 	{

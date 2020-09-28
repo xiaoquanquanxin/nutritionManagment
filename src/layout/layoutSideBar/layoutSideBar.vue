@@ -13,7 +13,7 @@
                     v-if="!item.hidden"
             >
                 <a-menu-item
-                        v-if="!item.children"
+                        v-if="item.isMenuItem || !item.children"
                         :key=item.name
                         @click="jumpTo(item)"
                 >

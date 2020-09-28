@@ -8,7 +8,7 @@ import {getRoutes} from "@/api/role"
 import {RouteConfig} from "vue-router"
 import {setRouteListByMap} from "@/utils/routerBasicMap"
 import {asyncRoutesList} from "@/router/modules/asyncRoutes"
-import {aaaaa} from '@/store/modules/a.ts';
+import {aaaaa} from '@/store/a.ts';
 
 interface STATE {
 	routeListLength: number;
