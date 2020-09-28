@@ -1,9 +1,9 @@
 <template>
     <a-layout-sider v-model="collapsed" :trigger="null" collapsible="">
         <div class="logo"></div>
-        <a-menu v-if="(selectRouteKey) && (openRouteKey)"
-                :default-selected-keys="[selectRouteKey]"
-                :default-open-keys="[openRouteKey]"
+        <a-menu v-if="(currentMeta)"
+                :default-selected-keys="[currentMeta.selectRouteKey||'']"
+                :default-open-keys="[currentMeta.openRouteKey||'']"
                 mode="inline"
                 theme="dark"
                 :inline-collapsed="collapsed"
@@ -43,7 +43,7 @@
 </template>
 <script>
     import { mapGetters } from 'vuex';
-    import { log } from '@/utils/common';
+    import { TOJSON } from '@/utils/common';
 
     export default {
         name: 'layoutSideBar',
@@ -55,21 +55,16 @@
             collapsed(){
                 return this.$store.state.sidebar.collapsed;
             },
-            selectRouteKey(){
-                const { selectRouteKey } = this.$store.state.sidebar;
-                console.log('🍎选中', selectRouteKey);
-                return selectRouteKey;
-            },
-            openRouteKey(){
-                const { openRouteKey } = this.$store.state.sidebar;
-                console.log('🍎展开', openRouteKey);
-                return openRouteKey;
-            },
             routes(){
                 const { routes } = this.$store.state.routeList;
-                console.log(routes);
+                //  console.log(routes);
                 return routes;
             },
+            currentMeta(){
+                const { currentMeta } = this.$store.state.routeList;
+                console.log(TOJSON(currentMeta));
+                return currentMeta;
+            }
         },
         methods: {
             //	跳转
@@ -85,9 +80,9 @@
 //                }
                 this.$router.push({ path: item.path });
             },
-            id(){
-                return Math.random();
-            }
+//            id(){
+//                return Math.random();
+//            }
         }
 
     };

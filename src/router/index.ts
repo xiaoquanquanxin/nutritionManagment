@@ -16,7 +16,7 @@ router.beforeEach(async (to, from, next) => {
 
 	//	如果没更新路由
 	if (store.state.routeList.routeListLength === syncRoutesListLength) {
-		console.log('拿路由？');
+		//	console.log('拿路由？');
 		//	拿路由
 		const accessRoutes = await store.dispatch('routeList/generateRoutes');
 		const newRouter = createRouter(accessRoutes);
@@ -26,7 +26,7 @@ router.beforeEach(async (to, from, next) => {
 		// router.matcher = newRouter.matcher;
 		// @ts-ignore
 		router.options.routes = newRouter.options.routes;
-		console.log('拿到路由');
+		//	console.log('拿到路由');
 		await router.addRoutes(accessRoutes);
 		next({...to, replace: true});
 		return;
@@ -36,9 +36,8 @@ router.beforeEach(async (to, from, next) => {
 	}
 	console.log('添加路由，元信息是');
 	console.log(to.meta);
-	await store.dispatch('sidebar/setOpenRouteKey', to.meta.openRouteKey);
-	await store.dispatch('sidebar/setSelectRouteKey', to.meta.selectRouteKey);
-	console.log('设置被选中完成了');
+	await store.dispatch('routeList/setCurrentMeta', to.meta);
+	//	console.log('设置被选中完成了');
 	next();
 })
 export default router;

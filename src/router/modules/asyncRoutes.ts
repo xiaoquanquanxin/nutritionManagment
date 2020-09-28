@@ -6,6 +6,8 @@ export const asyncRoutesList = [
 		meta: {
 			chName: '用户列表',
 			selectRouteKey: 'user',
+			//	是user路由
+			isUserList: true,
 		},
 		name: 'user',
 		path: '/user',
@@ -17,6 +19,8 @@ export const asyncRoutesList = [
 				meta: {
 					chName: '病人信息',
 					selectRouteKey: 'user',
+					//	是user路由的某一项子路由
+					userSelectKey: 'patientInfo',
 				},
 				name: 'patientInfo',
 				path: '/user/patientInfo',
@@ -27,6 +31,7 @@ export const asyncRoutesList = [
 				meta: {
 					chName: '筛查',
 					selectRouteKey: 'user',
+					userSelectKey: 'screening',
 				},
 				name: 'screening',
 				path: '/user/screening',
@@ -37,6 +42,7 @@ export const asyncRoutesList = [
 				meta: {
 					chName: '营养评估',
 					selectRouteKey: 'user',
+					userSelectKey: 'assess',
 				},
 				name: 'assess',
 				path: '/user/assess',
@@ -47,17 +53,18 @@ export const asyncRoutesList = [
 				meta: {
 					chName: '营养干预',
 					selectRouteKey: 'user',
+					userSelectKey: 'intervene',
 				},
 				name: 'intervene',
 				path: '/user/intervene',
 				component: () => import(/* webpackChunkName: "prescription" */ '@/views/user/intervene.vue'),
 				hidden: true,
 			},
-
 			{
 				meta: {
-					chName: '营养监测',
+					chName: '监测',
 					selectRouteKey: 'user',
+					userSelectKey: 'monitor',
 				},
 				name: 'monitor',
 				path: '/user/monitor',
@@ -68,6 +75,7 @@ export const asyncRoutesList = [
 				meta: {
 					chName: '病程记录',
 					selectRouteKey: 'user',
+					userSelectKey: 'treatmentCourse',
 				},
 				name: 'treatmentCourse',
 				path: '/user/treatmentCourse',
@@ -78,16 +86,15 @@ export const asyncRoutesList = [
 				meta: {
 					chName: '活动小结',
 					selectRouteKey: 'user',
+					userSelectKey: 'activitySummary',
 				},
 				name: 'activitySummary',
 				path: '/user/activitySummary',
 				component: () => import(/* webpackChunkName: "prescription" */ '@/views/user/activitySummary.vue'),
 				hidden: true,
 			},
-
 		]
 	},
-
 	{
 		meta: {
 			chName: '处方审核列表',
