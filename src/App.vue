@@ -5,7 +5,7 @@
 </template>
 <script lang="ts">
 	import {Vue, Component} from 'vue-property-decorator';
-	import MyLayout from '@/components/layout.vue';
+	import MyLayout from '@/layout/layout.vue';
 
 	@Component({
 		components: {
