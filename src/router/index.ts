@@ -5,7 +5,7 @@ import {syncRoutesList, syncRoutesListLength} from "@/router/modules/syncRoutes"
 
 Vue.use(VueRouter);
 const createRouter = (routesList: RouteConfig[]) => new VueRouter({
-	mode: 'history',
+	mode: 'hash',
 	routes: routesList.concat(syncRoutesList)
 });
 
