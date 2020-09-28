@@ -97,6 +97,16 @@ export const asyncRoutesList = [
 	},
 	{
 		meta: {
+			chName: '确认入院',
+			selectRouteKey: 'user',
+		},
+		name: 'confirmHospital',
+		path: '/user/confirmHospital',
+		component: () => import(/* webpackChunkName: "confirmHospital" */ '@/views/user/confirmHospital.vue'),
+		hidden: true,
+	},
+	{
+		meta: {
 			chName: '处方审核列表',
 			selectRouteKey: 'prescription',
 		},
