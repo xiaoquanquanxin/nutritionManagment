@@ -8,7 +8,7 @@ import {getRoutes} from "@/api/role"
 import {RouteConfig} from "vue-router"
 import {setRouteListByMap} from "@/utils/routerBasicMap"
 import {asyncRoutesList} from "@/router/modules/asyncRoutes"
-import {aaaaa} from '@/store/a.ts';
+import {routeMap} from '@/store/a.ts';
 import {COMMIT_INTERFACE} from "@/store"
 
 interface STATE {
@@ -44,7 +44,7 @@ const actions = {
 	//  生成路由权限，从服务端动态拉取
 	generateRoutes({commit}: COMMIT_INTERFACE<null>) {
 		//	服务端数据
-		const map = aaaaa;
+		const map = routeMap;
 		return new Promise(resolve => {
 			setTimeout(() => {
 				resolve(map);
