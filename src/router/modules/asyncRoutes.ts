@@ -50,11 +50,12 @@ export const asyncRoutesList = [
 	{
 		meta: {
 			chName: '处方详情',
-			selectRouteKey: 'prescriptionDetail',
+			selectRouteKey: 'prescription',
 		},
 		path: '/prescription/prescriptionDetail',
 		name: 'prescriptionDetail',
 		component: () => import(/* webpackChunkName: "prescription" */ '@/views/prescription/prescriptionDetail.vue'),
+		hidden: true,
 	},
 	{
 		meta: {
@@ -68,11 +69,12 @@ export const asyncRoutesList = [
 	{
 		meta: {
 			chName: '配置详情',
-			selectRouteKey: 'configurationDetail',
+			selectRouteKey: 'configuration',
 		},
 		path: '/configuration/configurationDetail',
 		name: 'configurationDetail',
 		component: () => import(/* webpackChunkName: "configuration" */ '@/views/configuration/configurationDetail.vue'),
+		hidden: true,
 	},
 	{
 		meta: {
@@ -91,6 +93,7 @@ export const asyncRoutesList = [
 		path: '/charge/pay',
 		name: 'pay',
 		component: () => import(/* webpackChunkName: "charge" */ '@/views/charge/pay.vue'),
+		hidden: true,
 	},
 	{
 		meta: {
@@ -100,6 +103,7 @@ export const asyncRoutesList = [
 		path: '/charge/billing',
 		name: 'billing',
 		component: () => import(/* webpackChunkName: "charge" */ '@/views/charge/billing.vue'),
+		hidden: true,
 	},
 
 	{
