@@ -17,7 +17,6 @@ export const asyncRoutesList = [
 				meta: {
 					chName: '病人信息',
 					selectRouteKey: 'user',
-					//	openRouteKey: 'user'
 				},
 				name: 'patientInfo',
 				path: '/user/patientInfo',
@@ -28,13 +27,64 @@ export const asyncRoutesList = [
 				meta: {
 					chName: '筛查',
 					selectRouteKey: 'user',
-					//	openRouteKey: 'user'
 				},
 				name: 'screening',
 				path: '/user/screening',
 				component: () => import(/* webpackChunkName: "prescription" */ '@/views/user/screening.vue'),
 				hidden: true,
 			},
+			{
+				meta: {
+					chName: '营养评估',
+					selectRouteKey: 'user',
+				},
+				name: 'assess',
+				path: '/user/assess',
+				component: () => import(/* webpackChunkName: "prescription" */ '@/views/user/assess.vue'),
+				hidden: true,
+			},
+			{
+				meta: {
+					chName: '营养干预',
+					selectRouteKey: 'user',
+				},
+				name: 'intervene',
+				path: '/user/intervene',
+				component: () => import(/* webpackChunkName: "prescription" */ '@/views/user/intervene.vue'),
+				hidden: true,
+			},
+
+			{
+				meta: {
+					chName: '营养监测',
+					selectRouteKey: 'user',
+				},
+				name: 'monitor',
+				path: '/user/monitor',
+				component: () => import(/* webpackChunkName: "prescription" */ '@/views/user/monitor.vue'),
+				hidden: true,
+			},
+			{
+				meta: {
+					chName: '病程记录',
+					selectRouteKey: 'user',
+				},
+				name: 'treatmentCourse',
+				path: '/user/treatmentCourse',
+				component: () => import(/* webpackChunkName: "prescription" */ '@/views/user/treatmentCourse.vue'),
+				hidden: true,
+			},
+			{
+				meta: {
+					chName: '活动小结',
+					selectRouteKey: 'user',
+				},
+				name: 'activitySummary',
+				path: '/user/activitySummary',
+				component: () => import(/* webpackChunkName: "prescription" */ '@/views/user/activitySummary.vue'),
+				hidden: true,
+			},
+
 		]
 	},
 
